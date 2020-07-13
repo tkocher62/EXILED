@@ -627,7 +627,7 @@ namespace EXILED
 				ServerLogs.Queue.Enqueue(new ServerLogs.ServerLog(msg, "AntiBackdoor", "EXILED-Ban", time));
 			}
 
-			ServerLogs._write = true;
+			ServerLogs._state = ServerLogs.LoggingState.Write;
 		}
 	}
 

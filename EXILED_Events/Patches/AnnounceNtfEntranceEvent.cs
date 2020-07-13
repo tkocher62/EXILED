@@ -1,9 +1,11 @@
 ﻿using Harmony;
 using System;
+using Respawning;
+using Respawning.NamingRules;
 
 namespace EXILED.Patches
 {
-	[HarmonyPatch(typeof(NineTailedFoxAnnouncer), nameof(NineTailedFoxAnnouncer.AnnounceNtfEntrance))]
+	[HarmonyPatch(typeof(NineTailedFoxAnnouncer), nameof(UnitNamingRule.PlayEntranceAnnouncement))]
 	public class AnnounceNtfEntranceEvent
 	{
 		public static bool Prefix(ref int _scpsLeft, ref int _mtfNumber, ref char _mtfLetter)
