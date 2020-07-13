@@ -5,16 +5,19 @@ using Respawning.NamingRules;
 
 namespace EXILED.Patches
 {
-	[HarmonyPatch(typeof(NineTailedFoxAnnouncer), nameof(UnitNamingRule.PlayEntranceAnnouncement))]
+	[HarmonyPatch(typeof(UnitNamingRule), nameof(UnitNamingRule.PlayEntranceAnnouncement))]
 	public class AnnounceNtfEntranceEvent
 	{
-		public static bool Prefix(ref int _scpsLeft, ref int _mtfNumber, ref char _mtfLetter)
+		public static bool Prefix(UnitNamingRule __instance, ref string regular)
 		{
 			try
 			{
 				bool allow = true;
 
-				Events.InvokeAnnounceNtfEntrance(ref _scpsLeft, ref _mtfNumber, ref _mtfLetter, ref allow);
+				int scp_alive = 0;
+				int unit_number = 0;
+				char unit_letter = 'a';
+				Events.InvokeAnnounceNtfEntrance(ref scp_alive, ref unit_number, ref unit_letter, ref allow);
 
 				return allow;
 			}
