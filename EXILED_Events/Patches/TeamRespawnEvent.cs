@@ -46,10 +46,7 @@ namespace EXILED.Patches
           List<ReferenceHub> playersToRespawn = EventPlugin.DeadPlayers.Take(maxRespawn).ToList();
           Events.InvokeTeamRespawn(ref isChaos, ref maxRespawn, ref playersToRespawn);
 
-          if (isChaos)
-            __instance.NextKnownTeam = SpawnableTeamType.ChaosInsurgency;
-          else
-            __instance.NextKnownTeam = SpawnableTeamType.NineTailedFox;
+          __instance.NextKnownTeam = isChaos ? SpawnableTeamType.ChaosInsurgency : SpawnableTeamType.NineTailedFox;
 
           if (playersToRespawn.Count > maxRespawn)
             playersToRespawn = playersToRespawn.Take(maxRespawn).ToList();
