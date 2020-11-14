@@ -1,3 +1,6 @@
+# Notes - tkocher62
+**I have been assisting in development of this project over the duration of its lifetime along with over twenty other developers. This includes both changes to the framework itself, but also creating 50+ plugins to fuel its community. Many other repositories on my account are made off this framework.**
+
 # EXILED - EXtended In-runtime Library for External Development
 
 ![EXILED CI](https://github.com/galaxy119/EXILED/workflows/EXILED%20CI/badge.svg?branch=2.0.0)
